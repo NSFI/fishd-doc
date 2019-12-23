@@ -1,0 +1,39 @@
+{
+  "name": "qiyu-doc-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dll": "concurrently 'npm run dll:demo' 'npm run dll:site'",
+    "dev": "concurrently 'npm run open:demo' 'npm run open:site'",
+    "build": "concurrently 'npm run build:demo' 'npm run build:site'",
+    "dll:site": "fishd-doc dll --config ./site/doc.desktop.config.js",
+    "dll:demo": "fishd-doc dll --config ./site/doc.mobile.config.js",
+    "open:site": "fishd-doc start --config ./site/doc.desktop.config.js",
+    "open:demo": "fishd-doc start --config ./site/doc.mobile.config.js",
+    "build:site": "fishd-doc build --config ./site/doc.desktop.config.js",
+    "build:demo": "fishd-doc build --config ./site/doc.mobile.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.12.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.16",
+    "babel-eslint": "^10.0.3",
+    "concurrently": "^5.0.2",
+    "eslint": "^6.7.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^3.0.2",
+    "eslint-plugin-html": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-standard": "^4.0.1"
+  }
+}
