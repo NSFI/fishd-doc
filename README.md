@@ -2,11 +2,13 @@
 
 ## 快速开始
 安装依赖包
+```sh
 // 稳定版
 npm i fishd-doc -g
 
 // beta版本
 npm i fishd-doc@next -g
+```
 
 创建项目
 ```sh
