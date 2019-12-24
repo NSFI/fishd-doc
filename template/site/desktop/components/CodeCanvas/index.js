@@ -9,7 +9,8 @@ export default class CodeCanvas extends React.Component {
   static propTypes = {
     locale: PropTypes.object,
     name: PropTypes.string,
-    containerId: PropTypes.string
+    containerId: PropTypes.string,
+    index: PropTypes.number
   };
 
   static defaultProps = {
@@ -37,7 +38,13 @@ export default class CodeCanvas extends React.Component {
     })
   }
 
-  renderSource () {}
+  renderSource (code) {
+    window.reloadDemo && window.reloadDemo({
+      index: this.props.index,
+      code: code,
+      hash: location.hash
+    })
+  }
 
   render () {
     const { name, description, jsCode, cssCodeSource, cssCode, lessCodeSource, lessCode } = this.props

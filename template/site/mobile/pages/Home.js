@@ -3,12 +3,16 @@ import { config } from '../config'
 import './Home.less'
 
 export default class Home extends Component {
+  handleClick = (key) => {
+    location.assign(`/#/${key}`)
+  }
+
   render () {
     const { nav } = config
     const menuList = nav.map(menu => {
       const subMenuList = menu.children.map(subMenu => {
         return (
-          <div className="u-demo" key={subMenu.name}>{subMenu.name}</div>
+          <div className="u-demo" key={subMenu.name} onClick={this.handleClick.bind(this, subMenu.key)}>{subMenu.name}</div>
         )
       })
       return (

@@ -16,15 +16,13 @@ module.exports = {
   htmlFileName: 'mobile',
   // dll配置
   dll: {
-    name: 'siteDll',
+    name: 'siteMobile',
     value: [
       'react',
       'react-dom',
       'react-router',
-      'codemirror',
       'marked',
-      'less',
-      'prismjs'
+      'less'
     ]
   },
   // 自定义webpack配置

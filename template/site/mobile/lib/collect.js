@@ -38,7 +38,7 @@ module.exports = function(WrappedComponent) {
       }
 
       const html = marked(markdown.replace(/:::\s?(demo|display)\s?([^]+?):::/g, (match, p1, p2, offset) => {
-        const id = offset.toString(36);
+        const id = 'fishd_' + offset.toString(36);
         //分类匹配出less/js/jsx/css
         const descriptionSource = p2.replace(/(`{3})([^`]|[^`][\s\S]*?[^`])\1(?!`)/ig, (markdown) => {
           const [all, type, code] = markdown.match(/```(.*)\n?([^]+)```/);

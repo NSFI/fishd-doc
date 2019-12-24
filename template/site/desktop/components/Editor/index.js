@@ -11,6 +11,11 @@ export default class Editor extends Component {
     value: PropTypes.string
   };
 
+  constructor (props) {
+    super(props)
+    this.init = true
+  }
+
   componentDidMount () {
     const { onChange, value } = this.props
 
@@ -20,8 +25,8 @@ export default class Editor extends Component {
       keyMap: 'sublime',
       viewportMargin: Infinity,
       lineNumbers: false,
-      dragDrop: false,
-      readOnly: 'nocursor'
+      dragDrop: false
+      // readOnly: 'nocursor'
     })
 
     setTimeout(() => {
@@ -33,7 +38,11 @@ export default class Editor extends Component {
         clearTimeout(this.timeout)
 
         this.timeout = setTimeout(() => {
-          onChange(cm.getValue())
+          if (this.init) {
+            this.init = false
+          } else {
+            onChange(cm.getValue())
+          }
         }, 300)
       }
     })

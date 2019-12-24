@@ -1,10 +1,14 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
 
-export type ButtonType = 'default' | 'primary' | 'ghost' | 'dashed' | 'danger'
+import './index.less'
+
+export type ButtonType = 'default' | 'primary' | 'danger'
+export type ButtonSize = 'small' | 'middle' | 'large'
 
 export interface BaseButtonProps {
   type?: ButtonType;
+  size?: ButtonSize;
 }
 
 export type ButtonProps = BaseButtonProps;
@@ -13,11 +17,14 @@ export type ButtonProps = BaseButtonProps;
 class Button extends React.Component<any, any> {
 
   static defaultProps = {
-    prefixCls: 'fishd-btn'
+    prefixCls: 'fishd-btn',
+    type: 'default',
+    size: 'middle'
   };
 
   static propTypes = {
     type: PropTypes.string,
+    size: PropTypes.string
   };
 
 
@@ -25,8 +32,9 @@ class Button extends React.Component<any, any> {
     super(props);
   }
   render() {
-    const { type } = this.props;
-    return <button type={type}>{this.props.children}</button>
+    const { type, size, prefixCls, ...otherProps } = this.props;
+    const classStr = `${prefixCls} ${prefixCls}__${type} ${prefixCls}__${size}`
+    return <button type={type} className={classStr} {...otherProps}>{this.props.children}</button>
   }
 }
 

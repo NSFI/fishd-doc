@@ -3,6 +3,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { hot } from 'react-hot-loader'
 import { Router, hashHistory, Route, IndexRoute, Redirect } from 'react-router'
+import initIframe from '@/lib/iframe.js'
 
 import Home from './pages/Home'
 import Components from './pages/Components'
@@ -11,6 +12,8 @@ import Layout from './pages/Layout'
 
 import 'ppfish/es/assets/css/index.less'
 import './styles/index.less'
+
+initIframe()
 
 // TODO: 国际化
 const routes = (

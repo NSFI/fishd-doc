@@ -16,7 +16,7 @@ module.exports = {
   htmlFileName: 'index',
   // dll配置
   dll: {
-    name: 'siteDll',
+    name: 'siteDesktop',
     value: [
       'react',
       'react-dom',

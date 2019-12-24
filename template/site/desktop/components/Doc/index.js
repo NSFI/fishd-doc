@@ -22,11 +22,11 @@ class Doc extends Component {
     })
     prism.highlightAll()
     const { demos } = this.props
-    // console.log('---- 渲染demo ----', demos)
-    demos.forEach(demo => {
+    demos.forEach((demo, index) => {
       const component = React.createElement(CodeCanvas, Object.assign({
         name: this.constructor.name.toLowerCase(),
-        containerId: demo.id
+        containerId: demo.id,
+        index
       }, demo, this.props), '')
       const div = document.getElementById(demo.id)
 

@@ -9,10 +9,14 @@ import Home from './pages/Home'
 import Demo from './pages/Demo'
 import './styles/base.less'
 
+import initIframe from '@/lib/iframe.js'
+
+initIframe()
+
 const routes = (
   <Route path="/" component={Layout}>
     <IndexRoute component={Home} />
-    <Route path="/components/:demo" component={Demo}></Route>
+    <Route path="/:demo" component={Demo}></Route>
     <Redirect from="*" to="/" />
   </Route>
 )
