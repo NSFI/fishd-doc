@@ -77,5 +77,27 @@ module.exports = {
   }
 }
 
-
 ```
+
+## 目录说明
+```
+.
+├── package.json                    // 文件依赖
+├── postcss.config.js               // postcss配置文件
+├── public                          // 公共资源目录
+├── site                            // 主题模版
+│   ├── docs                        // 组件文档地址
+│   ├── desktop                     // 桌面主题模版
+│   ├── doc.desktop.config.js       // 桌面主题配置
+│   ├── doc.mobile.config.js        // 预览主题配置
+│   └── mobile                      // 预览主题模版
+├── source                          // 组件库源代码
+│   ├── Button.tsx
+│   ├── index.js
+│   └── index.less
+└── tsconfig.json                    // ts配置文件
+```
+
+## 注意事项
+1. 非web项目组件库请务使用移动端模版，因为无法直接编译非web端组件到页面中，请自行实现h5预览，并通过修改docs/config中的预览地址，实现文档开发。
+2. 项目持续优化中，若有疑问，可以资讯项目开发人员，或者提出issue
