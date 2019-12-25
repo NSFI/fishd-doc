@@ -50,9 +50,13 @@ module.exports = {
   htmlTemplate: path.join(__dirname, './desktop/template.html'),
   // html输出名称，默认值`index`
   htmlFileName: 'index',
+  // 文件输出目录
+  outputPath: './dist/desktop',
+  // 同webpack publicPath
+  publicPath: '/',
   // dll配置
   dll: {
-    name: 'siteDll',
+    name: 'siteDesktop',
     value: [
       'react',
       'react-dom',
@@ -72,5 +76,6 @@ module.exports = {
     return config
   }
 }
+
 
 ```

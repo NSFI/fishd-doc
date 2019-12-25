@@ -1,8 +1,10 @@
 import { getPlainComponentsList } from './utils'
 
+const isProd = process.env.NODE_ENV === 'production'
+
 export const config = {
   // 组件预览地址
-  demoBaseUrl: 'http://localhost:4100/#/',
+  demoBaseUrl: isProd ? 'http://localhost:3500/#/' : 'http://localhost:4100/#/',
   codeEdit: true,
   'zh-CN': {
     header: {},

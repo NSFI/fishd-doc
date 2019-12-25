@@ -13,7 +13,11 @@ module.exports = {
   // html模版路径
   htmlTemplate: path.join(__dirname, './mobile/template.html'),
   // html输出名称，默认值`index`
-  htmlFileName: 'mobile',
+  htmlFileName: 'index',
+  // 文件输出路径
+  outputPath: './dist/mobile',
+  // 同webpack publicPath
+  publicPath: '/',
   // dll配置
   dll: {
     name: 'siteMobile',
