@@ -1,4 +1,7 @@
 ## 七鱼文档库解决方案
+![](https://img.shields.io/github/issues/NSFI/fishd-doc)
+![](https://img.shields.io/github/forks/NSFI/fishd-doc)
+![](https://img.shields.io/github/stars/NSFI/fishd-doc)
 
 ## 快速开始
 安装依赖包
