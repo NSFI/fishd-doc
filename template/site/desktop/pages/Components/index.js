@@ -64,17 +64,22 @@ export default class Components extends React.Component {
 
   handleCopyUrl = (url) => {
     copy(url)
-    message.success('copied:' + url)
+    const lang = window.$lang
+    const tip = lang === 'zh-CN' ? '已复制' : 'copied'
+    message.success(`${tip}:` + url)
   }
 
   render () {
+    // TODO:
+    const lang = window.$lang
+    const nameKey = window.$lang === 'zh-CN' ? 'name' : 'nameEn'
     const SubMenu = Menu.SubMenu
     const componentIndex = this.plainComponentList.findIndex((menuItem) => menuItem.key === this.state.page)
     const prevLink = this.plainComponentList[componentIndex - 1]
     const nextLink = this.plainComponentList[componentIndex + 1]
     const { isMobile } = this.state
     const demoName = this.props.params.demo || ''
-    const demoUrl = config.demoBaseUrl + demoName
+    const demoUrl = `${config.demoBaseUrl}${lang}/${demoName}`
     const menuChild = (
       <nav className="side-nav">
         <Menu
@@ -89,20 +94,20 @@ export default class Components extends React.Component {
                 // 二级菜单 + 内嵌菜单
                 const menuList = typeList.map(typeListItem => {
                   return {
-                    title: typeListItem.name,
+                    title: typeListItem[nameKey],
                     children: typeListItem.children
                       .filter(components => isShowAllComponents || components.published)
                       .map(component => ({
                         key: component.key,
-                        href: `#/components/${component.key}`,
-                        title: component.name
+                        href: `#/${lang}/components/${component.key}`,
+                        title: component[nameKey]
                       }))
                   }
                 })
                 return (
                   menuList.length &&
                   <SubMenu key={item.key}
-                    title={<span className="misc-type">{item.name}</span>}>
+                    title={<span className="misc-type">{item[nameKey]}</span>}>
                     {
                       menuList.map(subMenu => (
                         <Menu.ItemGroup key={subMenu.title} title={subMenu.title} disabled={false}>
@@ -124,14 +129,14 @@ export default class Components extends React.Component {
                 // 二级菜单
                 const menuList = typeList
                   .filter(components => isShowAllComponents || components.published)
-                  .map(components => ({
-                    key: components.key,
-                    href: `#/components/${components.key}`,
-                    title: components.name
+                  .map(component => ({
+                    key: component.key,
+                    href: `#/${lang}/components/${component.key}`,
+                    title: component[nameKey]
                   }))
                 return (
                   menuList.length &&
-                  <SubMenu key={item.key} title={item.name}>
+                  <SubMenu key={item.key} title={item[nameKey]}>
                     {
                       menuList.map(component => {
                         return (
@@ -174,7 +179,7 @@ export default class Components extends React.Component {
                 <Col span={12} className="prev-page">
                   {
                     prevLink &&
-                    <a href={`#/components/${prevLink.key}`}>
+                    <a href={`#/${lang}/components/${prevLink.key}`}>
                       <Icon type="left" className="prev-page-icon"/>{prevLink.name}
                     </a>
                   }
@@ -182,7 +187,7 @@ export default class Components extends React.Component {
                 <Col span={12} className="next-page">
                   {
                     nextLink &&
-                    <a href={`#/components/${nextLink.key}`}>
+                    <a href={`#/${lang}/components/${nextLink.key}`}>
                       {nextLink.name}<Icon type="right" className="next-page-icon"/>
                     </a>
                   }
@@ -191,6 +196,7 @@ export default class Components extends React.Component {
               <BackTop/>
               <div className="u-simulator">
                 <div className="u-address" onClick={this.handleCopyUrl.bind(this, demoUrl)}>{demoUrl}</div>
+                <div className="u-refresh"></div>
                 <iframe className="u-iframe" sandbox="allow-scripts allow-top-navigation allow-same-origin allow-forms" frameBorder="0" src={demoUrl}></iframe>
               </div>
             </div>

@@ -8,8 +8,12 @@ export default function initIframe () {
     const event = e.data || ''
     switch(event.type) {
       case 'pathChange':
-        if (event.data.slice(2)) {
-          location.assign(`/#/components/${event.data.slice(2)}`)
+        // #/zh-CN/button
+        const arr = event.data.split('/')
+        const lang = arr[1]
+        const demo = arr[2]
+        if (demo) {
+          location.assign(`/#/${lang}/components/${demo}`)
         }
         break
     }

@@ -6,7 +6,9 @@ import './style.less'
 export default class RuleColor extends React.Component {
   handleClick = (copyText) => {
     copy(copyText)
-    message.success('copied:' + copyText)
+    const lang = window.$lang
+    const tip = lang === 'zh-CN' ? '已复制' : 'copied'
+    message.success(`${tip}:` + copyText)
   };
 
   render () {

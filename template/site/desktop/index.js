@@ -1,9 +1,9 @@
-/* eslint-disable */
 import React from 'react'
 import { render } from 'react-dom'
 import { hot } from 'react-hot-loader'
 import { Router, hashHistory, Route, IndexRoute, Redirect } from 'react-router'
-import initIframe from '@/lib/iframe.js'
+import initIframe from '@/lib/iframe'
+import { setLang } from '@/lib/lang'
 
 import Home from './pages/Home'
 import Components from './pages/Components'
@@ -16,20 +16,28 @@ import './styles/index.less'
 initIframe()
 
 // TODO: 国际化
-const routes = (
-  <Route path="/" component={Layout}>
-    <Route path="/home" component={Home}/>
-    <Route path="/components" component={Components}>
-      <IndexRoute component={Demo}/>
-      <Route path=":demo" component={Demo}/>
+const currentLang = window.$lang
+const langs = ['en-US', 'zh-CN']
+
+const genRoutes = function (lang) {
+  return (
+    <Route path={`/${lang}`} component={Layout}>
+      <IndexRoute component={Home} />
+      <Route path={`/${lang}/home`} component={Home} />
+      <Route path={`/${lang}/components`} component={Components}>
+        <IndexRoute component={Demo} />
+        <Route path=":demo" component={Demo} />
+      </Route>
+      <Redirect from="*" to={`/${lang}/home`} />
     </Route>
-    <Redirect from="*" to="/home" />
-  </Route>
-)
+  )
+}
 
 const App = () => (
   <Router history={hashHistory}>
-    {routes}
+    {genRoutes(langs[0])}
+    {genRoutes(langs[1])}
+    <Redirect from="*" to={`/${currentLang}`} />
   </Router>
 )
 

@@ -92,8 +92,8 @@ class Demo extends Component {
     if (demos.length > 0) {
       return (
         <div className="u-demo">
-          <h3>
-            组件<em>{this.props.params.demo}</em>示例
+          <h3 className="u-demo-title">
+            组件{this.props.params.demo}示例
           </h3>
           <div className="u-demo-list">
             {this.props.demos.map((item, index) => {

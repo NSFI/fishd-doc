@@ -5,7 +5,8 @@ import renderer from './renderer'
 import './style/index.less'
 export default class Demo extends Component {
   render () {
-    // TODO: 判断是组件还是markdown
+    // TODO:
+    const lang = window.$lang
     const menuItem = plainComponents.find(itm => itm.key === this.props.params.demo)
 
     if (menuItem || !this.props.params.demo) {
@@ -24,7 +25,7 @@ export default class Demo extends Component {
         )
       }
     } else {
-      location.assign('/#/home')
+      location.assign(`/#/${lang}home`)
       return null
     }
   }

@@ -16,7 +16,6 @@ export default function initIframe () {
     const event = e.data || ''
     switch(event.type) {
       case 'reloadDemo':
-        console.log('发射')
         eventbus.emit('reloadDemo', event.data)
         break
     }

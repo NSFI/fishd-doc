@@ -31,10 +31,11 @@ module.exports = function(WrappedComponent) {
       let markdown = ''
       let demos = []
       // TODO: 国际化
+      const lang = window.$lang
       try {
-        markdown = require(`@docs/zh-CN/${this.props.params.demo}.md`).default
+        markdown = require(`@docs/${lang}/${this.props.params.demo}.md`).default
       } catch (e) {
-        markdown = require(`@docs/zh-CN/quickStart.md`).default
+        markdown = require(`@docs/${lang}/quickStart.md`).default
       }
 
       const html = marked(markdown.replace(/:::\s?(demo|display)\s?([^]+?):::/g, (match, p1, p2, offset) => {
@@ -72,7 +73,7 @@ module.exports = function(WrappedComponent) {
           }
           return '';
         });
-        //replace剩下的是description
+        // replace剩下的是description
         this.description = marked(descriptionSource);
         demos.push({
           id,
