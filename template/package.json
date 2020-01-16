@@ -1,7 +1,7 @@
 {
-  "name": "pp-doc-1",
+  "name": "fished-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "七鱼移动端组件库",
   "main": "index.js",
   "scripts": {
     "dll": "concurrently 'npm run dll:demo' 'npm run dll:site'",
@@ -17,13 +17,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "events": "^3.0.0",
     "react": "^16.12.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-decorators": "^7.7.4",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.7.4",
+    "@babel/plugin-proposal-numeric-separator": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
     "@types/react": "^16.9.16",
     "autoprefixer": "^9.7.3",
     "babel-eslint": "^10.0.3",
+    "babel-plugin-transform-imports": "^2.0.0",
     "concurrently": "^5.0.2",
     "eslint": "^6.7.1",
     "eslint-config-airbnb": "^18.0.1",
@@ -36,6 +44,7 @@
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.16.0",
-    "eslint-plugin-standard": "^4.0.1"
+    "eslint-plugin-standard": "^4.0.1",
+    "react-hot-loader": "^4.12.18"
   }
 }
