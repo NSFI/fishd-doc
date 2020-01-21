@@ -1,6 +1,6 @@
 {
   "name": "fishd-doc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "一款能帮助快速搭建组件库文档的效率工具",
   "author": "hangaoke <188869009@qq.com>",
   "license": "MIT",
