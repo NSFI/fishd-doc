@@ -109,7 +109,8 @@ class Demo extends Component {
         </div>
       )
     } else {
-      location.assign('/#/')
+      // location.assign('/#/')
+      location.hash = '/'
       return null
     }
   }

@@ -10,7 +10,7 @@ export default class Home extends Component {
 
   handleClick = (key) => {
     const lang = window.$lang
-    location.assign(`/#/${lang}/${key}`)
+    location.hash = `/${lang}/${key}`
   }
 
   render () {

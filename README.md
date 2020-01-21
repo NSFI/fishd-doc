@@ -3,6 +3,8 @@
 ![](https://img.shields.io/github/forks/NSFI/fishd-doc)
 ![](https://img.shields.io/github/stars/NSFI/fishd-doc)
 
+## [DEMO体验](https://hangaoke1.github.io/fishd-desktop/#/zh-CN/home)
+
 ## 快速开始
 安装依赖包
 ```sh
@@ -57,6 +59,8 @@ module.exports = {
   outputPath: './dist/desktop',
   // 同webpack publicPath
   publicPath: '/',
+  // css中引用的资源路径，如果publicPath配置了相对目录，请配置 ../ 使引用目录正确，否则会出现资源引用路径异常，若未配置，则默认使用pulbicPath
+  MiniCssExtractPluginPublicPath: '../',
   // dll配置
   dll: {
     name: 'siteDesktop',
