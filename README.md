@@ -120,6 +120,55 @@ module.exports = {
 }
 ```
 
+## Markdown书写规范
+组件使用场景及其描述
+
+### 组件Demo编写方式1
+
+:::demo 组件Demo的介绍1
+
+```js
+render(){
+  return(
+    <Button type="primary">Button</Button>
+  )
+}
+```
+
+```css
+h4{
+  font-size: 32px;
+}
+```
+:::
+
+### 组件Demo编写方式2
+
+:::demo 组件Demo的介绍2
+
+```js
+class Demo extends React.Component{
+  render(){
+    return(
+      <Button type="primary">Button</Button>
+    )
+  }
+}
+
+ReactDOM.render(<Demo {...context.props}/>,mountNode);
+```
+
+```less
+h4{
+  font-size: 32px;
+}
+```
+
+:::
+
+> 注意：所有二级标题都将会被渲染成右侧的`Anchor导航`
+
+
 ## 注意事项
 1. 非web项目组件库请务使用移动端模版，因为无法直接编译非web端组件到页面中，请自行实现h5预览，并通过修改docs/config中的预览地址，实现文档开发。
 2. 项目持续优化中，若有疑问，可以资讯项目开发人员，或者提出issue
