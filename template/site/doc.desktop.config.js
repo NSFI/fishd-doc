@@ -22,7 +22,7 @@ module.exports = {
   MiniCssExtractPluginPublicPath: '../',
   // dll配置
   dll: {
-    name: 'desktop-dll',
+    name: 'desktopDll',
     value: [
       'react',
       'react-dom',
