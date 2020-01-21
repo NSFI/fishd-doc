@@ -7,7 +7,7 @@ export const config = {
    * 组件预览地址
    * 如果是非H5组件库，请自行实现组件预览效果，并在此配置预览路径
    */
-  demoBaseUrl: isProd ? 'http://localhost:3500/#/' : 'http://localhost:4100/#/',
+  demoBaseUrl: isProd ? 'https://hangaoke1.github.io/fishd-page/#/' : 'http://localhost:4100/#/',
   codeEdit: true,
   nav: [
     {

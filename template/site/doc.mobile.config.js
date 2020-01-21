@@ -17,10 +17,12 @@ module.exports = {
   // 文件输出路径
   outputPath: './dist/mobile',
   // 同webpack publicPath
-  publicPath: '/',
+  publicPath: './',
+  // css中引用的资源路径，如果publicPath配置了相对目录，请配置 ../ 使引用目录正确，否则会出现资源引用路径异常，若未配置，则默认使用pulbicPath
+  MiniCssExtractPluginPublicPath: '../',
   // dll配置
   dll: {
-    name: 'siteMobile',
+    name: 'mobileDll',
     value: [
       'react',
       'react-dom',

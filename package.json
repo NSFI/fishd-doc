@@ -1,14 +1,14 @@
 {
   "name": "fishd-doc",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "一款能帮助快速搭建组件库文档的效率工具",
+  "author": "hangaoke <188869009@qq.com>",
+  "license": "MIT",
+  "main": "bin/fishd-doc.js",
   "bin": {
     "fishd-doc": "bin/fishd-doc.js"
   },
   "scripts": {},
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@babel/cli": "^7.7.4",
     "@babel/core": "^7.7.4",
@@ -60,5 +60,12 @@
     "webpack-dev-server": "^3.9.0",
     "webpackbar": "^4.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NSFI/fishd-doc.git"
+  }
 }
