@@ -111,7 +111,7 @@ module.exports = {
 3. 在desktop/config中配置组件导航，例如
 ```
 {
-  key: 'quickStart',    // md文件名称
+  key: 'quickStart',    // md文件名称，同时作为路径后缀存在s
   type: 'markdown',     // 文档类型markdown或者react
   name: '快速上手',      // 组件中文名称
   nameEn: 'QuickStart', // 组件英文名称
@@ -168,6 +168,30 @@ h4{
 
 > 注意：所有二级标题都将会被渲染成右侧的`Anchor导航`
 
+
+## 主题模版说明
+```
+.
+├── docs                     // 文档
+│   ├── en-US                // 英文文档 markdown
+│   └── zh-CN                // 中文文档 markdown
+│   └── react                // React组件式文档
+├── doc.desktop.config.js    // 主站点配置文件
+├── doc.mobile.config.js     // Demo配置文件
+├── desktop                  // 主站点源码
+└── mobile                   // Demo源码
+```
+
+## 路由说明
+项目会自动根据nav的key来生成对应的组件文档路由
+1. 对于desktop站点会生成以下组件路由
+```
+/#/zh-CN/components/button
+```
+2. 对于mobile站点会生成以下组件路由`如果demo配置的是非本项目提供的，请注意路径设计`
+```
+/#/zh-CN/button
+```
 
 ## 注意事项
 1. 非web项目组件库请务使用移动端模版，因为无法直接编译非web端组件到页面中，请自行实现h5预览，并通过修改docs/config中的预览地址，实现文档开发。
