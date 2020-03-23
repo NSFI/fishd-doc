@@ -1,14 +1,14 @@
-# 英文文档～～～Button 按钮 【交互：刘莹莹 |视觉：徐剑杰 |开发：吴圣筑】
+# Button 【Design：Liu |UI：Xu |Develop：Wu】
 
-按钮用于开始一个即时操作。
+The button is used to start an instant operation.
 
-## 何时使用
+## When to use
 
-标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。
+An operation command is marked (or encapsulates a group), and the corresponding business logic is triggered in response to the user's click behavior.
 
-## 按钮类型
+## Button type
 
-:::demo 按钮有四种类型：主按钮、次按钮、危险按钮,主按钮在同一个操作区域最多出现一次。
+:::demo There are four types of buttons: primary button, secondary button, and dangerous button. The primary button appears at most once in the same operation area.
 ```js
 render(){
  return(<div className="components-button-demo-basic">
@@ -29,11 +29,11 @@ render(){
 :::
 
 
-## 按钮尺寸
+## Button size
 
-:::demo 按钮有大、中、小三种尺寸。
+:::demo The buttons are available in large, medium and small sizes.
 
-通过设置 `size` 为 `large` `small` 分别把按钮设为大、小尺寸。若不设置 `size`，则尺寸为中。
+Set the size of the buttons to large and small by setting the size to large and small. If `size` is not set, the size is medium.
 
 
 ```js
@@ -67,11 +67,11 @@ render(){
 
 ## API
 
-通过设置 Button 的属性来产生不同的按钮样式，推荐顺序为：`type` -> `shape` -> `size` -> `loading` -> `disabled`
+Generate different button styles by setting the Button properties. The recommended order is：`type` -> `shape` -> `size` -> `loading` -> `disabled`
 
-按钮的属性说明如下：
+The properties of the button are described below：
 
-| 属性 | 说明 | 类型 | 默认值 |
+| Attributes | Description | Type | Defaults |
 | --- | --- | --- | --- |
-| size | 设置按钮大小 | Enum {'small', 'large', 'default'} | 'default' |
-| type | 设置按钮类型 | Enum {'primary', 'dashed', 'danger', 'default'} | 'default' |
+| size | Set button size | Enum {'small', 'large', 'default'} | 'default' |
+| type | Set button type | Enum {'primary', 'dashed', 'danger', 'default'} | 'default' |

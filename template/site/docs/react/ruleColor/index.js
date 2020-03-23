@@ -3,6 +3,27 @@ import copy from 'copy-to-clipboard'
 import { message } from 'ppfish'
 import './style.less'
 
+const textMap = {
+  'zh-CN': {
+    title: 'Color 色彩',
+    subTitle1: '主色',
+    desc1: 'FishDesign 为了避免视觉传达差异，使用一套特定的调色板来规定颜色，为你所搭建的产品提供一致的外观视觉感受。',
+    subTitle2: '辅助色',
+    desc2: '除了主色外的场景色，需要在不同的场景中使用（例如警告色表示警告的操作）。',
+    subTitle3: '中性色',
+    desc3: '中性色用于文本、背景和边框颜色，用来表现层次结构。'
+  },
+  'en-US': {
+    title: 'Color',
+    subTitle1: 'Main color',
+    desc1: 'FishDesign uses a specific set of color palettes to avoid differences in visual communication to provide a consistent look and feel for the products you build.',
+    subTitle2: 'Auxiliary color',
+    desc2: 'Scene colors other than the main color need to be used in different scenes (for example, a warning color indicates a warning operation).',
+    subTitle3: 'Neutral color',
+    desc3: 'Neutral colors are used for text, background, and border colors to express hierarchy.'
+  }
+}
+
 export default class RuleColor extends React.Component {
   handleClick = (copyText) => {
     copy(copyText)
@@ -12,11 +33,13 @@ export default class RuleColor extends React.Component {
   };
 
   render () {
+    const lang = window.$lang
+    const text = textMap[lang]
     return (
       <div id="color">
-        <h1 className="global-title md-heading">Color 色彩</h1>
-        <h3 id="main-color-title" className="md-heading">主色</h3>
-        <p className="desc md-paragraph">FishDesign 为了避免视觉传达差异，使用一套特定的调色板来规定颜色，为你所搭建的产品提供一致的外观视觉感受。</p>
+        <h1 className="global-title md-heading">{ text.title }</h1>
+        <h3 id="main-color-title" className="md-heading">{ text.subTitle1 }</h3>
+        <p className="desc md-paragraph">{ text.desc1 }</p>
         <div className="main-color-container">
           <div className="main-color-item" onClick={() => {
             this.handleClick('#337EFF')
@@ -25,8 +48,8 @@ export default class RuleColor extends React.Component {
             <div className="value">#337EFF</div>
           </div>
         </div>
-        <h3 id="aux-color-title" className="md-heading">辅助色</h3>
-        <p className="desc md-paragraph">除了主色外的场景色，需要在不同的场景中使用（例如警告色表示警告的操作）。</p>
+        <h3 id="aux-color-title" className="md-heading">{ text.subTitle2 }</h3>
+        <p className="desc md-paragraph">{ text.desc2 }</p>
         <div className="aux-color-container">
           <div className="aux-color-item" onClick={() => {
             this.handleClick('#F24957')
@@ -54,8 +77,8 @@ export default class RuleColor extends React.Component {
           </div>
         </div>
 
-        <h3 id="neu-color-title" className="md-heading">中性色</h3>
-        <p className="desc md-paragraph">中性色用于文本、背景和边框颜色，用来表现层次结构。</p>
+        <h3 id="neu-color-title" className="md-heading">{ text.subTitle3 }</h3>
+        <p className="desc md-paragraph">{ text.desc3 }</p>
         <div className="neu-color-container">
           <div className="left">
             <div className="neu-color-item" onClick={() => {
