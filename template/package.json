@@ -1,5 +1,5 @@
 {
-  "name": "pp-doc-aa",
+  "name": "my-doc",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -35,7 +35,6 @@
     "babel-plugin-transform-imports": "^2.0.0",
     "concurrently": "^5.0.2",
     "eslint": "^6.7.1",
-    "eslint-config-airbnb": "^18.0.1",
     "eslint-config-standard": "^14.1.0",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-loader": "^3.0.2",
