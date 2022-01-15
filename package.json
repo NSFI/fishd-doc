@@ -44,7 +44,7 @@
     "inquirer": "^7.0.1",
     "less": "3.10.3",
     "less-loader": "5.0.0",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "mini-css-extract-plugin": "0.8.0",
     "nprogress": "^0.2.0",
     "postcss-loader": "3.0.0",
